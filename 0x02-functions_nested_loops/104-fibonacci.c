@@ -1,24 +1,16 @@
+//Fibonacci Series using Recursion
 #include <stdio.h>
-/**
- * main - prints
- *
- * Return: Always 0;
- */
-int main(void)
+int fib(int n)
 {
-int i;
-float x, y, z;
-x = 1;
-y = 2;
-printf("%.0f, ", x);
-printf("%.0f", y);
-for (i = 0; i < 96; i++)
-{
-z = x + y;
-printf(", %.0f", z);
-x = y;
-y = z;
+    if (n <= 1)
+        return n;
+    return fib(n - 1) + fib(n - 2);
 }
-putchar('\n');
-return (0);
+
+int main()
+{
+    int n = 98;
+    printf("%d", fib(n));
+    getchar();
+    return 0;
 }
