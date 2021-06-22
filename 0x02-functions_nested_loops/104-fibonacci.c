@@ -49,5 +49,6 @@ else
 printf("\n");
 i++;
 }
+putchar('\n');
 return (0);
 }
