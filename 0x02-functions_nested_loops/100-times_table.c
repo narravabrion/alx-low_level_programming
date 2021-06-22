@@ -1,49 +1,51 @@
 #include "holberton.h"
+
 /**
- * print_times_table - prints the multiplicaiton times table
- * @n: takes in the what times table user wants, type int
- * Prints only digts and uses _putchar function
+ * print_times_table - prints times table
+ * @n : times table to use
+ * Return:void
  */
-int print_times_table(int n)
+
+void print_times_table(int n)
 {
-	int c, r, num, tens;
 
-	if (!(n >= 0 && n < 15))
-		return 0;
-	for (r = 0; r <= n; r++)
+	int a = 0, rep, b;
+
+	if (n < 0 || n > 15)
+		return;
+
+	while (a <= n)
 	{
-		for (c = 0; c <= n ; c++)
+		for (b = 0; b <= n; b++)
 		{
-			num = r * c;
-			tens = num / 10;
-			if (tens > 9) /* makes sure tens is a single digit ex. 123/10=12%10=2*/
-				tens = tens % 10;
-			if (c == 0) /*Print the first coloum*/
-				_putchar('0');
-			else if (tens == 0 && (num / 100) == 0)
-			{/*print only single digits and so 101 work*/
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((num % 10) + '0');
-			}
-			else if ((num / 100) == 0) /*Print double digits*/
+			rep = a * b;
+			if (b == 0)
+				_putchar('0' + rep);
+			else if (rep < 10)
 			{
 				_putchar(' ');
-				_putchar(tens + '0');
-				_putchar((num % 10) + '0');
-
+				_putchar(' ');
+				_putchar('0' + rep);
 			}
-			else /*print everything else*/
+			else if (rep < 100)
 			{
-				_putchar((num / 100) + '0');
-				_putchar(tens + '0');
-				_putchar((num % 10) + '0');
+				_putchar(' ');
+				_putchar('0' + rep / 10);
+				_putchar('0' + rep % 10);
 			}
-			if (c != n)
+			else
+			{
+				_putchar('0' + rep / 100);
+				_putchar('0' + (rep - 100) / 10);
+				_putchar('0' + rep % 10);
+			}
+			if (b < n)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-		} _putchar('\n');
+		}
+		_putchar('\n');
+		a++;
 	}
 }
