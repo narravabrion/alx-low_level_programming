@@ -4,7 +4,7 @@
  * @n: takes in the what times table user wants, type int
  * Prints only digts and uses _putchar function
  */
-void print_times_table(int n)
+int print_times_table(int n)
 {
 	int c, r, num, tens;
 
