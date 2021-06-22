@@ -9,7 +9,7 @@ int print_times_table(int n)
 	int c, r, num, tens;
 
 	if (!(n >= 0 && n < 15))
-		return;
+		return 0;
 	for (r = 0; r <= n; r++)
 	{
 		for (c = 0; c <= n ; c++)
