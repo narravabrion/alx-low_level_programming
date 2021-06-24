@@ -1,47 +1,28 @@
-
-Emmastro
-/
-alx-low_level_programming
- 0 stars  3 forks
-Code
-Issues
-Pull requests
-Actions
-Projects
-More
-alx-low_level_programming/0x04-more_functions_nested_loops/7-print_diagonal.c
-@Emmastro
-Emmastro Submit
- History
- 1 contributor
-30 lines (24 sloc)  338 Bytes
 #include "holberton.h"
 
 /**
- * print_diagonal - check for a digit
- * @n : number of \\ to be printed
- * Return:void
+ * print_diagonal - draws a diagonal line on the terminal
+ * @n: number of times the character \ should be printed
  */
-
 void print_diagonal(int n)
 {
-
-	int i = 0, ii;
-
-	while (i < n && n > 0)
+	if (n <= 0)
 	{
-		ii = 0;
-		while (ii < i)
+		_putchar('\n');
+	} else
+	{
+		int i, j;
+
+		for (i = 0; i < n; i++)
 		{
-			_putchar(' ');
-			ii++;
+			for (j = 0; j < n; j++)
+			{
+				if (j == i)
+					_putchar('\\');
+				else if (j < i)
+					_putchar(' ');
+			}
+			_putchar('\n');
 		}
-
-		_putchar('\\');
-		_putchar('\n');
-		i++;
 	}
-	if (i == 0)
-		_putchar('\n');
-
 }
