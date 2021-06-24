@@ -1,15 +1,18 @@
 #include "holberton.h"
+
 /**
- * _isupper - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * _isupper - checks if the letter is uppercase
+ * @c: interger to be checked
+ * Return: 1 if c is uppercase
  */
 int _isupper(int c)
 {
-if (c >= 'A' && c <= 'Z')
-return (1);
-else
-return (0);
+	if ((c >= 'A') && (c <= 'Z'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
